@@ -6,8 +6,13 @@ function ContactUsPage() {
   return (
     <div className="w-full flex_center flex-col mt-20">
       {/* form */}
-      <div className="md:w-[40rem] px-10 md:px-0">
-        <h1 className="font-semibold text-4xl">Get In Touch</h1>
+      <div className="md:w-[40rem] px-10 md:px-0 ">
+        <div className="relative w-max">
+          <h1 className="font-semibold pb-3 text-4xl bottom_text_line">
+            Get In Touch
+          </h1>
+        </div>
+
         <p className="mt-4">
           Contact us for high-quality metal, glass, and aluminium solutions
           tailored to your needs!
