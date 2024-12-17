@@ -1,5 +1,5 @@
 function AboutUsPage() {
-  return <div>AboutUsPage</div>;
+  return <div className="h-svh">AboutUsPage</div>;
 }
 
 export default AboutUsPage;
