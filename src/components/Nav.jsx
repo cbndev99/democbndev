@@ -39,7 +39,7 @@ function Nav({ logo }) {
           ))}
         </div>
         <div className="flex md:hidden">
-          <button onClick={() => setToggleSideNav(true)}>
+          <button id="more_btn" onClick={() => setToggleSideNav(true)}>
             <Bars3Icon aria-hidden="true" className="icon" />
           </button>
         </div>
