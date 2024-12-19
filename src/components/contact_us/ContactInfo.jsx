@@ -47,7 +47,7 @@ function ContactInfo() {
         <button
           id="fb_btn"
           onClick={() => redirectToFB()}
-          className="flex items-center justify-start gap-3 btn"
+          className="flex items-center justify-start gap-3 btn shadow-md"
         >
           <Facebook className="size-6" />
           <p>Follow Us Now!</p>
