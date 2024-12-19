@@ -1,17 +1,14 @@
 import GoogleMap from "../components/contact_us/GoogleMap";
 import ContactForm from "../components/contact_us/ContactForm";
 import ContactInfo from "../components/contact_us/ContactInfo";
+import PageHeader from "../components/PageHeader";
 
 function ContactUsPage() {
   return (
     <div className="w-full flex_center flex-col mt-20">
       {/* form */}
-      <div className="md:w-[40rem] px-10 md:px-0 ">
-        <div className="relative w-max">
-          <h1 className="font-semibold pb-3 text-4xl bottom_text_line">
-            Get In Touch
-          </h1>
-        </div>
+      <div className="content_wrapper">
+        <PageHeader title="Contact Us" />
 
         <p className="mt-4">
           Contact us for high-quality metal, glass, and aluminium solutions
@@ -21,8 +18,10 @@ function ContactUsPage() {
         {/* TODO: Integrate Email API */}
         <ContactForm />
       </div>
+
       {/* contact info */}
       <ContactInfo />
+
       {/* google map */}
       <GoogleMap />
     </div>
