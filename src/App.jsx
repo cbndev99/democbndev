@@ -10,7 +10,7 @@ const LOGO = (
 function App() {
   return (
     <div className="font-mont">
-      <header className="h-20 bg-white drop-shadow-md fixed w-full top-0 z-10">
+      <header className="h-20 bg-white drop-shadow-md fixed w-full top-0 z-50">
         <Nav logo={LOGO} />
       </header>
 

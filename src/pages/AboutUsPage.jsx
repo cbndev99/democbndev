@@ -1,6 +1,6 @@
 import PageHeader from "../components/PageHeader";
 import { Eye, Goal } from "lucide-react";
-import P1 from "../assets/img/p1.jpg";
+import img1 from "../assets/img/p1.jpg";
 
 function AboutUsPage() {
   return (
@@ -21,7 +21,7 @@ function AboutUsPage() {
           </p>
         </div>
         <div>
-          <img src={P1} alt="aboutus-photo" loading="lazy" />
+          <img src={img1} alt="aboutus-photo" loading="lazy" />
         </div>
       </div>
 
