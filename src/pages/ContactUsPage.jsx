@@ -2,12 +2,20 @@ import GoogleMap from "../components/contact_us/GoogleMap";
 import ContactForm from "../components/contact_us/ContactForm";
 import ContactInfo from "../components/contact_us/ContactInfo";
 import PageHeader from "../components/PageHeader";
+import { motion } from "motion/react";
+import { LeftToRightVariant } from "../utils/MotionVariants";
 
 function ContactUsPage() {
   return (
     <div className="w-full flex_center flex-col mt-20">
       {/* form */}
-      <div className="content_wrapper">
+      <motion.div
+        className="content_wrapper"
+        initial="offscreen"
+        whileInView="onscreen"
+        transition={{ duration: 1, ease: "easeInOut" }}
+        variants={LeftToRightVariant}
+      >
         <PageHeader title="Contact Us" />
 
         <p className="mt-4">
@@ -17,7 +25,7 @@ function ContactUsPage() {
 
         {/* TODO: Integrate Email API */}
         <ContactForm />
-      </div>
+      </motion.div>
 
       {/* contact info */}
       <ContactInfo />

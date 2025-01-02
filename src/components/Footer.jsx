@@ -45,12 +45,12 @@ function Footer({ logo }) {
           </div>
           <div className="mt-10 flex items-center gap-3">
             <button
-              className="border rounded-md p-1 size-7 flex justify-center items-center hover:text-orange-400 hover:border-orange-400"
+              className="flex items-center gap-3 hover:text-orange-400 hover:border-orange-400"
               onClick={() => redirectToFB()}
             >
-              <Facebook size={16} />
+              <i className="bx bxl-facebook-square text-3xl"></i>
+              Follow Us Now!
             </button>
-            Follow Us Now!
           </div>
         </div>
       </div>
