@@ -1,6 +1,16 @@
 function ContactForm() {
   return (
-    <form action="" className="mt-20">
+    <form
+      action="https://formsubmit.co/chanbohning@hotmail.com"
+      method="POST"
+      className="mt-20"
+    >
+      <input type="hidden" name="_template" value="table"></input>
+      <input
+        type="hidden"
+        name="_autoresponse"
+        value="Your request has been sent to CBN DEV"
+      ></input>
       <div className="flex flex-col justify-center gap-5">
         <div>
           <label htmlFor="Name" className="input_label">
@@ -15,13 +25,13 @@ function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="Email" className="input_label">
+          <label htmlFor="email" className="input_label">
             Email <span className="text-red-500">*</span>
           </label>
           <input
             type="email"
-            name="Email"
-            id="Email"
+            name="email"
+            id="email"
             className="input_box"
             required
           />

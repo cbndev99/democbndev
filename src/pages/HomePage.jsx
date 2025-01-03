@@ -1,4 +1,4 @@
-import img1 from "../assets/img/p4.jpg";
+import img2 from "../assets/img/p4_800.webp";
 import CounterSection from "../components/home/CounterSection";
 import { Link } from "react-router";
 import { motion } from "motion/react";
@@ -76,9 +76,10 @@ function HomePage() {
                 }}
               ></motion.div>
               <img
-                src={img1}
+                src={img2}
                 alt="hero-img"
                 loading="lazy"
+                width="500"
                 className="max-w-[25rem] lg:min-w-[700px] h-[60rem] object-cover shadow-xl"
               />
               <motion.div

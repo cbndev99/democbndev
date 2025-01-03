@@ -1,5 +1,4 @@
 import { MapPinIcon, PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
-import { Facebook } from "lucide-react";
 import PropTypes from "prop-types";
 
 const currentYear = new Date().getFullYear();

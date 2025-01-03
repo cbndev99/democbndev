@@ -1,6 +1,6 @@
 import PageHeader from "../components/PageHeader";
 import { Eye, Goal } from "lucide-react";
-import img1 from "../assets/img/p13.jpg";
+import img1 from "../assets/img/p13.webp";
 import { motion } from "motion/react";
 import { TopToDownVariant, LeftToRightVariant } from "../utils/MotionVariants";
 

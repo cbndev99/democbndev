@@ -39,7 +39,11 @@ function Nav({ logo }) {
           ))}
         </div>
         <div className="flex md:hidden">
-          <button id="more_btn" onClick={() => setToggleSideNav(true)}>
+          <button
+            role="button"
+            id="more_btn"
+            onClick={() => setToggleSideNav(true)}
+          >
             <Bars3Icon aria-hidden="true" className="icon" />
           </button>
         </div>
@@ -47,6 +51,7 @@ function Nav({ logo }) {
         {/* overlay background */}
         {toggleSideNav ? (
           <div
+            role="dialog"
             className="absolute right-0 top-0 bg-black w-full h-screen opacity-30 z-10"
             onClick={() => setToggleSideNav(false)}
           ></div>
