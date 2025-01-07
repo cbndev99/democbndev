@@ -5,7 +5,6 @@ function ContactForm({ toast }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setloading(true);
 
     // GET - form detail
     const form = e.target;
@@ -32,6 +31,7 @@ function ContactForm({ toast }) {
     });
 
     try {
+      setloading(true);
       const response = await fetch(request);
 
       if (response.ok) {
