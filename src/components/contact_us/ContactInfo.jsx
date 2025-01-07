@@ -41,7 +41,7 @@ function ContactInfo() {
         initial="offscreen"
         whileInView="onscreen"
         transition={{ duration: 1, ease: "easeInOut" }}
-        variants={RightToLeftVariant}
+        variants={LeftToRightVariant}
       >
         <div className="flex items-center justify-start gap-3">
           <PhoneIcon aria-hidden="true" className="size-5" />

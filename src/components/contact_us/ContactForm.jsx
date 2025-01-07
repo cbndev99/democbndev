@@ -1,10 +1,57 @@
-function ContactForm() {
+import { useState } from "react";
+
+function ContactForm({ toast }) {
+  const [loading, setloading] = useState(false);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setloading(true);
+
+    // GET - form detail
+    const form = e.target;
+    const formData = new FormData(form);
+    const fullNameVal = formData.get("fullname");
+    const emailVal = formData.get("email");
+    const contactVal = formData.get("contact");
+    const msgVal = formData.get("message");
+    const template = formData.get("_template");
+
+    const url = "https://formsubmit.co/ajax/chanbohning@hotmail.com";
+    const request = new Request(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: fullNameVal,
+        email: emailVal,
+        contact: contactVal,
+        message: msgVal,
+        _template: template,
+      }),
+    });
+
+    try {
+      const response = await fetch(request);
+
+      if (response.ok) {
+        setloading(false);
+        toast.success("Your email has been sent.", {
+          position: "top-right",
+          theme: "light",
+        });
+      }
+    } catch (error) {
+      setloading(false);
+      toast.error("Something went wrong", {
+        position: "top-right",
+        theme: "light",
+      });
+    }
+  }
+
   return (
-    <form
-      action="https://formsubmit.co/chanbohning@hotmail.com"
-      method="POST"
-      className="mt-20"
-    >
+    <form method="POST" onSubmit={handleSubmit} className="mt-20">
       <input type="hidden" name="_template" value="table"></input>
       <input
         type="hidden"
@@ -13,13 +60,13 @@ function ContactForm() {
       ></input>
       <div className="flex flex-col justify-center gap-5">
         <div>
-          <label htmlFor="Name" className="input_label">
+          <label htmlFor="fullname" className="input_label">
             Full Name <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
-            name="Name"
-            id="Name"
+            name="fullname"
+            id="fullname"
             className="input_box"
             required
           />
@@ -37,35 +84,60 @@ function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="Contact" className="input_label">
+          <label htmlFor="contact" className="input_label">
             Contact Number <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
-            name="Contact"
-            id="Contact"
+            name="contact"
+            id="contact"
             className="input_box"
             placeholder="01122334444"
             required
           />
         </div>
         <div>
-          <label htmlFor="Message" className="input_label">
+          <label htmlFor="message" className="input_label">
             Message <span className="text-red-500">*</span>
           </label>
           <textarea
             type="text"
             rows={4}
-            name="Message"
-            id="Message"
+            name="message"
+            id="message"
             className="input_box"
             required
           />
         </div>
-
-        <button type="submit" className="btn mt-10">
-          Submit
-        </button>
+        {loading ? (
+          <button type="submit" className="btn_loading mt-10" disabled>
+            <svg
+              className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth={5}
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+            Submit
+          </button>
+        ) : (
+          <button type="submit" className="btn mt-10">
+            Submit
+          </button>
+        )}
       </div>
     </form>
   );

@@ -4,6 +4,7 @@ import ContactInfo from "../components/contact_us/ContactInfo";
 import PageHeader from "../components/PageHeader";
 import { motion } from "motion/react";
 import { LeftToRightVariant } from "../utils/MotionVariants";
+import { ToastContainer, toast } from "react-toastify";
 
 function ContactUsPage() {
   return (
@@ -24,7 +25,7 @@ function ContactUsPage() {
         </p>
 
         {/* TODO: Integrate Email API */}
-        <ContactForm />
+        <ContactForm toast={toast} />
       </motion.div>
 
       {/* contact info */}
@@ -32,6 +33,7 @@ function ContactUsPage() {
 
       {/* google map */}
       <GoogleMap />
+      <ToastContainer className="sm:mt-20" />
     </div>
   );
 }
