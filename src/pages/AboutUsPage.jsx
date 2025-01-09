@@ -48,7 +48,7 @@ function AboutUsPage() {
 
       <div className="bg-white px-8 py-16  w-full flex justify-center">
         <div className="max-w-[75rem] pb-10">
-          <h1 className="text-center font-bold text-2xl">
+          <h1 className="text-center font-bold text-2xl text-gray-800">
             Our Vision & Mission
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-[3rem] md:gap-[5rem]">

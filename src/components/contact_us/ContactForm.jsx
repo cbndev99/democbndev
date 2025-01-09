@@ -138,6 +138,7 @@ function ContactForm({ toast }) {
             Submit
           </button>
         )}
+        <input type="reset" defaultValue="Reset" className="cursor-pointer" />
       </div>
     </form>
   );
